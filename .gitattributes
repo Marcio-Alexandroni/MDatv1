@@ -1,2 +1,7 @@
-# Auto detect text files and perform LF normalization
 * text=auto
+mvnw text eol=lf
+*.cmd text eol=crlf
+*.java text eol=lf
+*.sql text eol=lf
+*.properties text eol=lf
+*.yml text eol=lf
