@@ -198,7 +198,7 @@ Nenhuma alteração é persistida quando a validação falha.
 
 ## Conferência da atividade
 
-A suíte `ApiIntegrationTest` contém 71 casos e verifica:
+A suíte `ApiIntegrationTest` contém 103 casos e verifica:
 
 - todos os 18 endpoints, mais o alias `/statistic`;
 - dados iniciais e contagens;
@@ -207,7 +207,20 @@ A suíte `ApiIntegrationTest` contém 71 casos e verifica:
 - validação em POST e PUT, campos opcionais e limites exatos;
 - erros por IDs inexistentes, corpo ausente, JSON malformado e tipos inválidos;
 - integração real por Feign, mensagem de sucesso e incremento da contagem;
+- adições simultâneas sem duplicar vínculos e execuções simultâneas sem perder registros;
+- todos os valores dos dados iniciais, acentos e nomes atualizados nas mensagens;
+- limites numéricos, campos obrigatórios omitidos e rejeição de JSON nulo ou array;
+- preservação das outras playlists e de seus históricos nas exclusões;
 - ausência de alterações em operações rejeitadas.
 
 A coleção `docs/MDatv1.postman_collection.json` permite executar um fluxo completo no Postman. Ela salva automaticamente os IDs criados e remove os registros de teste ao final.
 O workflow do GitHub Actions está configurado para executar `clean verify` a cada push e pull request.
+
+## Entrega
+
+O enunciado solicita o **link do repositório Git**:
+https://github.com/Marcio-Alexandroni/MDatv1
+
+O código pode ser obtido com `git clone` ou em **Code → Download ZIP** no GitHub.
+Após extrair o ZIP, execute os comandos da seção **Executar** na pasta que contém `pom.xml`.
+O JAR é um executável de apoio; o repositório contém também o código-fonte, os testes, os scripts SQL e a coleção Postman necessários à avaliação.
